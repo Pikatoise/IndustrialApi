@@ -10,3 +10,6 @@ C:\Users\Pikatoise\Desktop\LoadingApi\Loading.DAL\obj\Debug\net6.0\Loading.DAL.d
 C:\Users\Pikatoise\Desktop\LoadingApi\Loading.DAL\obj\Debug\net6.0\refint\Loading.DAL.dll
 C:\Users\Pikatoise\Desktop\LoadingApi\Loading.DAL\obj\Debug\net6.0\Loading.DAL.pdb
 C:\Users\Pikatoise\Desktop\LoadingApi\Loading.DAL\obj\Debug\net6.0\ref\Loading.DAL.dll
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.DAL\bin\Debug\net6.0\Loading.Domain.dll
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.DAL\bin\Debug\net6.0\Loading.Domain.pdb
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.DAL\obj\Debug\net6.0\Loading.DAL.csproj.CopyComplete

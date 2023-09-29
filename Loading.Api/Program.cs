@@ -1,3 +1,9 @@
+using Loading.DAL.Interfaces;
+using Loading.DAL.Repositories;
+using Loading.DAL;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
+
 namespace Loading.Api
 {
     public class Program
@@ -6,12 +12,27 @@ namespace Loading.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddCors();
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                            .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseNpgsql(builder.Configuration["ConnectionStrings:PgSql"]);
+            });
+
             var app = builder.Build();
+
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowAnyOrigin();
+            });
 
             if (app.Environment.IsDevelopment())
             {
@@ -22,7 +43,6 @@ namespace Loading.Api
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

@@ -1,0 +1,11 @@
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\bin\Debug\net6.0\Loading.Domain.deps.json
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\bin\Debug\net6.0\Loading.Domain.dll
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\bin\Debug\net6.0\Loading.Domain.pdb
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\obj\Debug\net6.0\Loading.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\obj\Debug\net6.0\Loading.Domain.AssemblyInfoInputs.cache
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\obj\Debug\net6.0\Loading.Domain.AssemblyInfo.cs
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\obj\Debug\net6.0\Loading.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\obj\Debug\net6.0\Loading.Domain.dll
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\obj\Debug\net6.0\refint\Loading.Domain.dll
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\obj\Debug\net6.0\Loading.Domain.pdb
+C:\Users\Pikatoise\Desktop\LoadingApi\Loading.Domain\obj\Debug\net6.0\ref\Loading.Domain.dll
