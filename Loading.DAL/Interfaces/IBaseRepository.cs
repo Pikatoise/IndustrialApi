@@ -6,7 +6,6 @@ namespace Loading.DAL.Interfaces
     {
         TEntity Create(TEntity entity);
         IQueryable<TEntity> GetAll();
-        TEntity? GetById(int id);
         TEntity Update(TEntity entity);
         TEntity Delete(TEntity entity);
         IQueryable<TEntity> GetByCondition(Expression<Func<TEntity, bool>> expression);

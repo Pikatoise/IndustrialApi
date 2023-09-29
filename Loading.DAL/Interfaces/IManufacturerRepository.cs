@@ -4,6 +4,6 @@ namespace Loading.DAL.Interfaces
 {
     public interface IManufacturerRepository: IBaseRepository<Manufacturer>
     {
-
+        public Manufacturer? GetById(int id);
     }
 }
