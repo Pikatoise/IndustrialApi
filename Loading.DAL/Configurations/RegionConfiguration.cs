@@ -15,7 +15,6 @@ namespace Loading.DAL.Configurations
             builder.Property(x => x.Code)
                 .HasColumnName("code")
                 .HasColumnType("text")
-                .UseIdentityColumn()
                 .IsRequired();
 
             builder.Property(x => x.Name)

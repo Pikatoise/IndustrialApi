@@ -13,7 +13,7 @@ namespace Loading.DAL.Configurations
             builder.HasKey(t => t.Id);
 
             builder.Property(x => x.Id)
-                .HasColumnName("Id")
+                .HasColumnName("id")
                 .HasColumnType("int")
                 .UseIdentityColumn()
                 .IsRequired();

@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Loading.DAL\Loading.DAL.csproj" />
     <ProjectReference Include="..\Loading.Domain\Loading.Domain.csproj" />
   </ItemGroup>
