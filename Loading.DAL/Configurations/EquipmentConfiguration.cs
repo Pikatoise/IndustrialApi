@@ -23,6 +23,9 @@ namespace Loading.DAL.Configurations
                 .HasColumnType("text")
                 .IsRequired();
 
+            builder.Property(x => x.ManufacturerId)
+                .HasColumnName("manufacturerid");
+
             builder.HasOne(e => e.Manufacturer)
                 .WithMany(m => m.Equipments)
                 .HasForeignKey(e => e.ManufacturerId);
