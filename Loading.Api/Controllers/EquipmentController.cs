@@ -60,6 +60,9 @@ namespace Loading.Api.Controllers
             {
                 Manufacturer? manufacturer = _repository.Manufacturers.GetById((int)createEquipmentData.ManufacturerId);
 
+                if (manufacturer == null)
+                    return BadRequest("Manufacturer is not exist");
+
                 newEquipment.Manufacturer = manufacturer;
             }
 

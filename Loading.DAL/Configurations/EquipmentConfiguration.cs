@@ -26,7 +26,7 @@ namespace Loading.DAL.Configurations
             builder.Property(x => x.ManufacturerId)
                 .HasColumnName("manufacturerid");
 
-            builder.HasOne(e => e.Manufacturer)
+            builder.HasOne<Manufacturer>(e => e.Manufacturer)
                 .WithMany(m => m.Equipments)
                 .HasForeignKey(e => e.ManufacturerId);
         }

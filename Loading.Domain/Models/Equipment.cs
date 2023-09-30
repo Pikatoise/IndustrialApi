@@ -8,6 +8,6 @@
 
         public int? ManufacturerId { get; set; }
 
-        public Manufacturer? Manufacturer { get; set; }
+        public Manufacturer? Manufacturer { get; set; } = null;
     }
 }

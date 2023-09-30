@@ -22,7 +22,10 @@ namespace Loading.DAL.Configurations
                 .HasColumnType("text")
                 .IsRequired();
 
-            builder.HasOne(r => r.RegionType)
+            builder.Property(x => x.RegionTypeId)
+                .HasColumnName("regiontypeid");
+
+            builder.HasOne<RegionType>(r => r.RegionType)
                 .WithMany(rt => rt.Regions)
                 .HasForeignKey(r => r.RegionTypeId);
         }
