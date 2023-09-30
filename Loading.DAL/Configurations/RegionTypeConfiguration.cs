@@ -26,7 +26,7 @@ namespace Loading.DAL.Configurations
             builder.HasMany<Region>(rt => rt.Regions)
                 .WithOne(r => r.RegionType)
                 .HasForeignKey(r => r.RegionTypeId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

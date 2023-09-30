@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Loading.Api.Controllers
 {
     [ApiController]
-    [Tags("Должности")]
+    [Tags("Должности (Posts)")]
     [Route("api/posts/")]
     public class PostController: ControllerBase
     {
@@ -33,15 +33,15 @@ namespace Loading.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("add/{postName}")]
-        public IActionResult CreatePost(string postName)
+        [HttpPost("add/{name}")]
+        public IActionResult CreatePost(string name)
         {
-            Post? postWithSameName = _repository.Posts.GetByCondition(p => p.Name.Equals(postName)).FirstOrDefault();
+            Post? postWithSameName = _repository.Posts.GetByCondition(p => p.Name.Equals(name)).FirstOrDefault();
 
             if (postWithSameName != null)
                 return BadRequest("Post with same name already exist");
 
-            Post newPost = _repository.Posts.Create(new Post() { Name =  postName });
+            Post newPost = _repository.Posts.Create(new Post() { Name =  name });
 
             _repository.Save();
 

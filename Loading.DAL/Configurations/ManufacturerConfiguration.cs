@@ -26,7 +26,7 @@ namespace Loading.DAL.Configurations
             builder.HasMany<Equipment>(m => m.Equipments)
                 .WithOne(e => e.Manufacturer)
                 .HasForeignKey(m => m.ManufacturerId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.SetNull);
 
         }
     }
