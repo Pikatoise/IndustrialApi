@@ -48,6 +48,23 @@ namespace Loading.Api.Controllers
             return Ok(newPost.Id);
         }
 
+        [HttpPut("change/id={id}&name={name}")]
+        public IActionResult ChangePostName(int id, string name)
+        {
+            var post = _repository.Posts.GetById(id);
+
+            if (post == null)
+                return NotFound("Post with this id not exist");
+
+            post.Name = name;
+
+            _repository.Posts.Update(post);
+
+            _repository.Save();
+
+            return Ok();
+        }
+
         [HttpDelete("remove/{id}")]
         public IActionResult DeletePost(int id)
         {

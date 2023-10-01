@@ -73,6 +73,35 @@ namespace Loading.Api.Controllers
             return Ok(newEquipment.Id);
         }
 
+        [HttpPut("change")]
+        public IActionResult ChangeEquipment([FromBody]ChangeEquipmentData changeEquipmentData)
+        {
+            var equipment = _repository.Equipments.GetById(changeEquipmentData.Id);
+
+            if (equipment == null)
+                return NotFound("Equipment with this id not exist");
+
+            if (changeEquipmentData.Name != null)
+                equipment.Name = changeEquipmentData.Name;
+
+            if (changeEquipmentData.ManufacturerId != null)
+                if (changeEquipmentData.ManufacturerId == -1)
+                    equipment.ManufacturerId = null;
+                else
+                {
+                    var manufacturer = _repository.Manufacturers.GetById((int)changeEquipmentData.ManufacturerId);
+
+                    if (manufacturer != null)
+                        equipment.ManufacturerId = changeEquipmentData.ManufacturerId;
+                }
+
+            _repository.Equipments.Update(equipment);
+
+            _repository.Save();
+
+            return Ok();
+        }
+
         [HttpDelete("remove/{id}")]
         public IActionResult DeleteEquipment(int id)
         {

@@ -48,6 +48,23 @@ namespace Loading.Api.Controllers
             return Ok(newRegionType.Id);
         }
 
+        [HttpPut("change/id={id}&name={name}")]
+        public IActionResult ChangeRegionTypeName(int id, string name)
+        {
+            var regionType = _repository.RegionTypes.GetById(id);
+
+            if (regionType == null)
+                return NotFound("RegionType with this id not exist");
+
+            regionType.Name = name;
+
+            _repository.RegionTypes.Update(regionType);
+
+            _repository.Save();
+
+            return Ok();
+        }
+
         [HttpDelete("remove/{id}")]
         public IActionResult DeleteRegionType(int id)
         {

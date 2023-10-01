@@ -71,6 +71,32 @@ namespace Loading.Api.Controllers
             return Ok(newRegion.Code);
         }
 
+        [HttpPut("change")]
+        public IActionResult ChangeRegion([FromBody] ChangeRegionData changeRegionData)
+        {
+            var region = _repository.Regions.GetByCode(changeRegionData.Code);
+
+            if (region == null)
+                return NotFound("Region with this id not exist");
+
+            if (changeRegionData.Name != null)
+                region.Name = changeRegionData.Name;
+
+            if (changeRegionData.RegionTypeId != null)
+            {
+                var regionType = _repository.RegionTypes.GetById((int)changeRegionData.RegionTypeId);
+
+                if (regionType != null)
+                    region.RegionTypeId = (int)changeRegionData.RegionTypeId;
+            }
+
+            _repository.Regions.Update(region);
+
+            _repository.Save();
+
+            return Ok();
+        }
+
         [HttpDelete("remove/{code}")]
         public IActionResult DeleteRegion(string code)
         {

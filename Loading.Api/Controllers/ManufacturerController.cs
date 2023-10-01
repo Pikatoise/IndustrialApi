@@ -48,6 +48,23 @@ namespace Loading.Api.Controllers
             return Ok(newManufacturer.Id);
         }
 
+        [HttpPut("change/id={id}&name={name}")]
+        public IActionResult ChangeManufacturerName(int id, string name)
+        {
+            var manufacturer = _repository.Manufacturers.GetById(id);
+
+            if (manufacturer == null)
+                return NotFound("Manufacturer with this id not exist");
+
+            manufacturer.Name = name;
+
+            _repository.Manufacturers.Update(manufacturer);
+
+            _repository.Save();
+
+            return Ok();
+        }
+
         [HttpDelete("remove/{id}")]
         public IActionResult DeleteManufacturer(int id)
         {
