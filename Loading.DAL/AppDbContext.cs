@@ -8,7 +8,7 @@ namespace Loading.DAL
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
-            //Database.EnsureDeleted();
+            //Database.EnsureDeleted(); // Удаление БД
 
             Database.EnsureCreated();
         }

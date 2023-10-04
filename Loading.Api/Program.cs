@@ -22,7 +22,8 @@ namespace Loading.Api
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseNpgsql(builder.Configuration["ConnectionStrings:PgSql"]);
+                //options.UseNpgsql(builder.Configuration["ConnectionStrings:PgSql"]); // PostgreSql
+                options.UseSqlite("Data Source=loading.db"); // SQLite
             });
 
             var app = builder.Build();
